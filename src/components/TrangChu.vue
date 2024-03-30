@@ -2,7 +2,16 @@
   <div class="mx-auto flex max-w-[1140px] flex-col gap-4 rounded-lg bg-white py-8 px-6">
          <div class="gap-15 mb-4 flex flex-col items-center gap-12">
             <span class="index-module_type__E-SaG text-xl md:text-2xl text-black whitespace-nowrap overflow-hidden">Hệ thống web Ninja School Online tự động</span>
-            <div class="flex gap-4"><button class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5bc0de] text-white hover:bg-[#39b3d7]"><span class="flex-1 truncate">Xem hướng dẫn</span></button><a target="_blank" rel="noreferrer" href="https://zalo.me/g/xhypsj216"><button class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5cb85c] text-white hover:bg-[#47a447]"><span class="flex-1 truncate">NHÓM ZALO</span></button></a></div>
+            <div class="flex gap-4">
+            <button @click="sendMessage" class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5bc0de] text-white hover:bg-[#39b3d7]">
+               <span class="flex-1 truncate">Xem hướng dẫn</span>
+            </button>
+            <a target="_blank" rel="noreferrer" href="https://zalo.me/g/xhypsj216">
+               <button class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5cb85c] text-white hover:bg-[#47a447]">
+                  <span class="flex-1 truncate">NHÓM ZALO</span>
+               </button>
+            </a>
+         </div>
          </div>
          <div class="flex flex-col">
             <div class="inline-flex justify-center">
@@ -404,25 +413,25 @@
 </template>
 <script>
 
-import firebase from "../configs/firebase";
+var ws = new WebSocket("ws://localhost:8080");
 
-import { getFirestore, serverTimestamp, collection, getDoc, doc, updateDoc, onSnapshot } from 'firebase/firestore';
-
-const db = getFirestore();
-const hostSecond = doc(db, "second", "second");
 export default {
    
-   async created() {
-      onSnapshot(hostSecond, (doc) => {
-         this.random = doc.data().random;
-         this.second = doc.data().second;
+   created() {
+        ws.onopen = function(e) {
+          console.log('Connection to server opened');
+        }
+        ws.onmessage = (e) => {
+         var data = JSON.parse(e.data);
+         
+         this.second = String(data[0]);
+         this.random = String(data[1]);
 
          if (this.second == "00:15") {
             this.showRandom = true;
          }
          if (this.second == "00:00") {
             this.showRandom = false;
-
          }
          this.sumSplitRandom = 0;
          this.splitRandom = "";
@@ -437,7 +446,10 @@ export default {
          this.lastNumber = this.sumSplitRandom % 10;
          this.splitRandom = this.splitRandom.slice(0, -1);
          this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
-      });
+        }
+        ws.onclose = (e) => {
+          console.log("Connection closed");
+        }
    },
    data() {
       return {
@@ -464,10 +476,21 @@ export default {
    },
    mounted() {
       // let 
+      // this.second = 99;
    },
    methods: {
       numberWithCommas(x) {
          return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      },
+      sendMessage() {
+         console.log('sendMessage');
+         
+         if(ws.readyState === WebSocket.OPEN) {
+            ws.send("tinh doan da o day");
+         }
+      },
+      disconnect() {
+         ws.close();
       }
 
    }
