@@ -85,19 +85,7 @@
                            <div class="col-span-1"><strong class="text-[#333333]">CĐ:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">C</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">Đ</span>
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]" v-for="item in historyLastNumber">{{ CDResult[item] }}</span>
                               </div>
                            </div>
                         </div>
@@ -105,56 +93,23 @@
                            <div class="col-span-1"><strong class="text-[#333333]">TK:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#d9534f]">K</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#d9534f]">K</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]">T</span>
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]" v-for="item in historyLastNumber">{{ TKResult[item] }}</span>
                               </div>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 border-b border-gray-cc py-1">
                            <div class="col-span-1"><strong class="text-[#333333]">UQ:</strong></div>
                            <div class="col-span-2">
-                              <div class="flex justify-center gap-1"><span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#3705fc]">U</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">Q</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">Q</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">Q</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">Q</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#333333]"></span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">Q</span></div>
+                              <div class="flex justify-center gap-1">
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]" v-for="item in historyLastNumber">{{ UQResult[item] }}</span></div>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 pt-1">
                            <div class="col-span-1"><strong class="text-[#333333]">SC:</strong></div>
                            <div class="col-span-2">
-                              <div class="flex justify-center gap-1"><span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]">0</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">5</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">5</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#b8a500]">9</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5bc0de]">1</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">5</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#7400bd]">8</span>
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]">5</span></div>
+                              <div class="flex justify-center gap-1">
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]" v-for="item in historyLastNumber"> {{ item  }}</span>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -423,9 +378,8 @@ export default {
         }
         ws.onmessage = (e) => {
          var data = JSON.parse(e.data);
-         
-         this.second = String(data[0]);
-         this.random = String(data[1]);
+
+         [this.second, this.random, this.historyLastNumber] = data;
 
          if (this.second == "00:15") {
             this.showRandom = true;
@@ -436,7 +390,7 @@ export default {
          this.sumSplitRandom = 0;
          this.splitRandom = "";
          
-         let split = this.random.split("");
+         let split = String(this.random).split("");
          
          for (let i of split) {
             this.sumSplitRandom += parseInt(i);
@@ -460,6 +414,7 @@ export default {
          sumSplitRandom : 0,
          resultSum : 0,
          lastNumber : 0,
+         historyLastNumber : [],
          arrayResult : [
             ['CUNG', 'KIẾM', 'KUNAI'], //0
             ['ĐAO', 'KIẾM', ""], //1
@@ -471,6 +426,42 @@ export default {
             ['ĐAO', 'TIÊU', ""], //7
             ['CUNG', 'TIÊU', ""], //8
             ['ĐAO', 'TIÊU', "QUẠT"], //9
+         ],
+         CDResult: [
+            'C',
+            'Đ',
+            'C',
+            'Đ',
+            'C',
+            'Đ',
+            'C',
+            'Đ',
+            'C',
+            'Đ',
+         ],
+         TKResult : [
+            'K',
+            'K',
+            'K',
+            'K',
+            'K',
+            'T',
+            'T',
+            'T',
+            'T',
+            'T',
+         ],
+         UQResult : [
+            'U',
+            '',
+            'U',
+            '',
+            'U',
+            'Q',
+            '',
+            'Q',
+            '',
+            'Q'
          ],
       }
    },
