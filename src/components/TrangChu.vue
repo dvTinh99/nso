@@ -368,7 +368,7 @@
 </template>
 <script>
 
-var ws = new WebSocket("ws://localhost:8080");
+var ws = new WebSocket("ws://103.57.220.91:8080");
 
 export default {
    
