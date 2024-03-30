@@ -394,13 +394,13 @@ export default {
             'bg-[#f0ad4e]',
             'bg-[#d9534f]', // 1 chua biet
             'bg-[#5cb85c]',
-            'bg-[#d9534f]', // 3 chua biet
+            'bg-[#d9534f]', //
             'bg-[#3705fc]',
             'bg-[#67617d]', // 5
-            'bg-[#d9534f]', // 6 chưa biet
+            'bg-[#d9534f]', // 
             'bg-[#00b093]',
             'bg-[#7400bd]',
-            'bg-[#d9534f]' // 9 chưa biet
+            'bg-[#d9534f]' //
          ],
          arrayResult : [
             ['CUNG', 'KIẾM', 'KUNAI'], //0
