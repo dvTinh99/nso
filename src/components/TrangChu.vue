@@ -77,15 +77,23 @@
                            <div class="col-span-1"><strong class="text-[#333333]">Kết quả:</strong></div>
                            <div class="col-span-2 text-center">
                               <div class="flex justify-center gap-3">
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5bc0de]" v-for="item in arrayResult[lastNumber]">{{item}}</span>
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#67617d]">{{lastNumber}}</span></div>
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white" 
+                                 :class="{'bg-[#5bc0de]' : item == 'ĐAO', 
+                                          'bg-[#f0ad4e]' : item == 'CUNG', 
+                                          'bg-[#d9534f]' : item == 'KIẾM', 
+                                          'bg-[#3705fc]' : item == 'KUNAI', 
+                                          'bg-[#5cb85c]' : item == 'TIÊU', 
+                                          'bg-[#67617d]' : item == 'QUẠT',
+                                          'bg-[#333333]' : item == '', 
+                                 }" v-for="item in arrayResult[lastNumber]">{{item}}</span>
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white" :class=[arrayColorSC[lastNumber]]>{{lastNumber}}</span></div>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 border-b border-gray-cc py-1">
                            <div class="col-span-1"><strong class="text-[#333333]">CĐ:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]" v-for="item in historyLastNumber">{{ CDResult[item] }}</span>
+                                 <span v-for="item in historyLastNumber" class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white" :class="{ 'bg-[#f0ad4e]' : CDResult[item] == 'C', 'bg-[#5bc0de]' : CDResult[item] == 'Đ'}">{{ CDResult[item] }}</span>
                               </div>
                            </div>
                         </div>
@@ -93,7 +101,7 @@
                            <div class="col-span-1"><strong class="text-[#333333]">TK:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#5cb85c]" v-for="item in historyLastNumber">{{ TKResult[item] }}</span>
+                                 <span v-for="item in historyLastNumber" class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white" :class="{ 'bg-[#5cb85c]' : TKResult[item] == 'T', 'bg-[#d9534f]' : TKResult[item] == 'K'}">{{ TKResult[item] }}</span>
                               </div>
                            </div>
                         </div>
@@ -101,14 +109,14 @@
                            <div class="col-span-1"><strong class="text-[#333333]">UQ:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#67617d]" v-for="item in historyLastNumber">{{ UQResult[item] }}</span></div>
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white" v-for="item in historyLastNumber"  :class="{ 'bg-[#67617d]' : UQResult[item] == 'Q', 'bg-[#3705fc]' : UQResult[item] == 'U', 'bg-[#333333]' : UQResult[item] == ''}">{{ UQResult[item] }}</span></div>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 pt-1">
                            <div class="col-span-1"><strong class="text-[#333333]">SC:</strong></div>
                            <div class="col-span-2">
                               <div class="flex justify-center gap-1">
-                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white bg-[#f0ad4e]" v-for="item in historyLastNumber"> {{ item  }}</span>
+                                 <span class="inline-block h-5 w-5 rounded-full text-center text-xs leading-5 text-white" :class="[arrayColorSC[item]]" v-for="item in historyLastNumber"> {{ item  }}</span>
                               </div>
                            </div>
                         </div>
@@ -368,43 +376,9 @@
 </template>
 <script>
 
-var ws = new WebSocket("ws://103.57.220.91:8080");
+var ws = new WebSocket("ws://localhost:8080");
 
 export default {
-   
-   created() {
-        ws.onopen = function(e) {
-          console.log('Connection to server opened');
-        }
-        ws.onmessage = (e) => {
-         var data = JSON.parse(e.data);
-
-         [this.second, this.random, this.historyLastNumber] = data;
-
-         if (this.second == "00:15") {
-            this.showRandom = true;
-         }
-         if (this.second == "00:00") {
-            this.showRandom = false;
-         }
-         this.sumSplitRandom = 0;
-         this.splitRandom = "";
-         
-         let split = String(this.random).split("");
-         
-         for (let i of split) {
-            this.sumSplitRandom += parseInt(i);
-            this.splitRandom += (i + "+");
-         }
-
-         this.lastNumber = this.sumSplitRandom % 10;
-         this.splitRandom = this.splitRandom.slice(0, -1);
-         this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
-        }
-        ws.onclose = (e) => {
-          console.log("Connection closed");
-        }
-   },
    data() {
       return {
          random : "",
@@ -415,6 +389,19 @@ export default {
          resultSum : 0,
          lastNumber : 0,
          historyLastNumber : [],
+         firstTimeCal : true,
+         arrayColorSC : [
+            'bg-[#f0ad4e]',
+            'bg-[#d9534f]', // 1 chua biet
+            'bg-[#5cb85c]',
+            'bg-[#d9534f]', // 3 chua biet
+            'bg-[#3705fc]',
+            'bg-[#67617d]', // 5
+            'bg-[#d9534f]', // 6 chưa biet
+            'bg-[#00b093]',
+            'bg-[#7400bd]',
+            'bg-[#d9534f]' // 9 chưa biet
+         ],
          arrayResult : [
             ['CUNG', 'KIẾM', 'KUNAI'], //0
             ['ĐAO', 'KIẾM', ""], //1
@@ -464,6 +451,64 @@ export default {
             'Q'
          ],
       }
+   },
+      
+   created() {
+        ws.onopen = function(e) {
+          console.log('Connection to server opened');
+        }
+        ws.onmessage = (e) => {
+         var data = JSON.parse(e.data);
+
+         [this.second, this.random, this.historyLastNumber] = data;
+
+         if (this.firstTimeCal) {
+
+            this.sumSplitRandom = 0;
+            this.splitRandom = "";
+            
+            let split = String(this.random).split("");
+            
+            for (let i of split) {
+               this.sumSplitRandom += parseInt(i);
+               this.splitRandom += (i + "+");
+            }
+
+            this.lastNumber = this.sumSplitRandom % 10;
+            this.splitRandom = this.splitRandom.slice(0, -1);
+            this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
+            this.firstTimeCal = false;
+         }
+
+         let minues = parseInt(this.second.split(":")[0]);
+
+         if (minues == 0) {
+            let seconds = parseInt(this.second.split(":")[1]);
+            if (seconds < 15) {
+               this.showRandom = true
+            }
+         }
+         if (this.second == "00:00") {
+            this.showRandom = false;
+
+            this.sumSplitRandom = 0;
+            this.splitRandom = "";
+            
+            let split = String(this.random).split("");
+            
+            for (let i of split) {
+               this.sumSplitRandom += parseInt(i);
+               this.splitRandom += (i + "+");
+            }
+
+            this.lastNumber = this.sumSplitRandom % 10;
+            this.splitRandom = this.splitRandom.slice(0, -1);
+            this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
+         }
+        }
+        ws.onclose = (e) => {
+          console.log("Connection closed");
+        }
    },
    mounted() {
       // let 
