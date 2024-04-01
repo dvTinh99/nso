@@ -141,7 +141,6 @@ export default {
       }
     },
     mounted() {
-
       this.isLogin = this.$store.state.auth.isLogin;
     },
     methods : {
