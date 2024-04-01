@@ -4,7 +4,7 @@
   <div class="bg-gray-e6">
    <header class="bg-brown-6b">
       <div class="mx-auto flex h-full max-w-[1140px] items-center justify-between">
-         <a href="/"><img src="/dctk-rm.png" alt="" width="67px"></a>
+         <a href="/"><img class="h-16" src="/dctk-rm.png" alt="" width="67px"></a>
          <div class="hidden md:flex">
             <a @click="changePage('/dang-nhap')">
                <button class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors text-white">
