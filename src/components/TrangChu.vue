@@ -158,14 +158,6 @@
          <div>
             <h3 class="mb-6 text-center text-2xl text-[#333333]">LỊCH SỬ THAM GIA</h3>
             <div class="text-sm marquee-container" style="--pause-on-hover: running; --pause-on-click: running;">
-               <div class="marquee" style="--play: running; --direction: normal; --duration: 19.79453125s; --delay: 0s; --iteration-count: infinite;">
-                  <div class="ql-container ql-snow" style="border: none;">
-                     <div class="ql-editor">
-                        <h2 class="ql-align-center"><strong class="ql-font-Mulish" style="background-color: rgb(255, 255, 102); color: rgb(230, 0, 0);">Tất cả giá trị xu đều = 0 VNĐ. Web sử dụng cho mục đích giải trí và chỉ cho phép chơi = Xu trong Game NSO của công ty TeaMobi</strong></h2>
-                        <h2 class="ql-align-center"><strong class="ql-font-Mulish" style="background-color: rgb(255, 255, 102); color: rgb(230, 0, 0);">Web cam kết không sử dụng và nói không với mọi hình thức Thanh Toán liên quan đến Thẻ Cào, ATM, Ví, vv...</strong></h2>
-                     </div>
-                  </div>
-               </div>
                <div class="marquee" aria-hidden="true" style="--play: running; --direction: normal; --duration: 19.79453125s; --delay: 0s; --iteration-count: infinite;">
                   <div class="ql-container ql-snow" style="border: none;">
                      <div class="ql-editor">
