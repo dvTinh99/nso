@@ -367,8 +367,7 @@
       </div>
 </template>
 <script>
-
-var ws = new WebSocket("ws://localhost:8080");
+var ws = new WebSocket(import.meta.env.VITE_WEBSOCKET_HOST);
 
 export default {
    data() {
