@@ -113,6 +113,9 @@
       </div>
    </footer>
 </div>
+<main>
+    <RouterView />
+  </main>
 </template>
 <script>
 export default {
@@ -129,10 +132,40 @@ export default {
     },
     mounted() {
       this.isLogin = this.$store.state.auth.isLogin;
+      switch (this.$route.path) {
+            case '/dang-nhap' : {
+               this.isLogin = true;
+               this.isHome = false;
+               this.isRegister = false;
+               this.isHistory = false;
+               break;
+            }
+            case '/dang-ki' : {
+               this.isLogin = false;
+               this.isHome = false;
+               this.isRegister = true;
+               this.isHistory = false;
+               break;
+            }
+            case '/lich-su' : {
+               this.isLogin = false;
+               this.isHome = false;
+               this.isRegister = false;
+               this.isHistory = true;
+               break;
+            }
+            default : {
+               this.isLogin = false;
+               this.isHome = true;
+               this.isRegister = false;
+               this.isHistory = false;
+               break;
+            }
+         }
     },
     methods : {
       changePage(path) {
-         this.$router.push(path);
+         this.$router.push({path: path});
       },
     }
 }

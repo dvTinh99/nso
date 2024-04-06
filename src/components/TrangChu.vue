@@ -804,6 +804,9 @@ export default {
       };
    },
    mounted() {
+      console.log('trang chu ne',this.$route.fullPath);
+
+      
       // let
       // this.second = 99;
    },

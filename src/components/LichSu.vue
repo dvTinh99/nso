@@ -647,6 +647,9 @@ export default {
 
         }
     },
+    mounted() {
+        console.log('lich su ne', this.$route.fullPath);
+    },
 
 }
 </script>
