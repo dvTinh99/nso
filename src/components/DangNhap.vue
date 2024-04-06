@@ -1,7 +1,6 @@
-<script setup>
-</script>
 
 <template>
+    <Master>
     <div class="mx-auto flex max-w-screen-md flex-col justify-center space-y-4 rounded-lg bg-white py-8 px-10">
         <h2 class="border-b border-white-f8 text-center text-[28px] text-[#006baa]">Đăng nhập</h2>
         <form class="flex flex-col items-center gap-4 text-sm"><input
@@ -21,7 +20,23 @@
                 class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#f0ad4e] text-sm text-white hover:bg-[#ed9c28]"><span
                     class="flex-1 truncate">Quên mật khẩu?</span></button></div>
     </div>
+</Master>
 </template>
+
+<script>
+import Master from "./Master.vue";
+export default {
+    components: {
+        Master
+    },
+    data() {
+        return {
+
+        }
+    },
+
+}
+</script>
 
 <style scoped>
 .read-the-docs {

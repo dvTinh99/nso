@@ -1,7 +1,5 @@
-<script setup>
-</script>
-
 <template>
+    <Master>
     <div class="mx-auto flex max-w-[1140px] flex-col gap-4 rounded-lg bg-white py-8 px-6">
         <h2 class="border-b border-white-f8 pb-4 text-[28px] text-[#006baa]">Lịch sử</h2>
         <form class="grid gap-x-6 gap-y-4 md:grid-cols-4">
@@ -635,8 +633,23 @@
             </ul>
         </div>
     </div>
+</Master>
 </template>
 
+<script>
+import Master from "./Master.vue";
+export default {
+    components: {
+        Master
+    },
+    data() {
+        return {
+
+        }
+    },
+
+}
+</script>
 <style scoped>
 .read-the-docs {
     color: #888;
