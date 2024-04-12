@@ -54,7 +54,7 @@
                               <strong class="text-[#333333]">Ván này:</strong>
                            </div>
                            <div class="col-span-2 text-center">
-                              <span class="font-semibold text-red-600">86,871</span>
+                              <span class="font-semibold text-red-600">{{ xuThisGame }}</span>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 border-b border-gray-cc py-1">
@@ -62,7 +62,7 @@
                               <strong class="text-[#333333]">Ván trước:</strong>
                            </div>
                            <div class="col-span-2 text-center">
-                              <span class="text-[#333333]">39,372</span>
+                              <span class="text-[#333333]">{{ xuPreviousGame }}</span>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 border-b border-gray-cc py-1">
@@ -710,6 +710,8 @@ export default {
       return {
          random: "",
          second: "",
+         xuThisGame: 0,
+         xuPreviousGame :0,
          showRandom: false,
          splitRandom: "",
          sumSplitRandom: 0,
@@ -782,6 +784,7 @@ export default {
             }
          }
          if (this.second == "00:00") {
+            [this.second, this.random, this.historyLastNumber, this.xuThisGame, this.xuPreviousGame] = data;
             this.showRandom = false;
 
             this.sumSplitRandom = 0;
