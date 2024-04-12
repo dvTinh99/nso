@@ -756,9 +756,8 @@ export default {
       ws.onmessage = (e) => {
          var data = JSON.parse(e.data);
 
-         [this.second, this.random, this.historyLastNumber] = data;
-
          if (this.firstTimeCal) {
+            [this.second, this.random, this.historyLastNumber, this.xuThisGame, this.xuPreviousGame] = data;
             this.sumSplitRandom = 0;
             this.splitRandom = "";
 
@@ -773,6 +772,8 @@ export default {
             this.splitRandom = this.splitRandom.slice(0, -1);
             this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
             this.firstTimeCal = false;
+         } else {
+            [this.second, this.random, this.historyLastNumber] = data;
          }
 
          let minues = parseInt(this.second.split(":")[0]);
