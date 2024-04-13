@@ -337,7 +337,93 @@
                         </th>
                      </tr>
                   </thead>
-                  <tbody></tbody>
+                  <tbody>
+                     <tr class="border-gray-80 border-b odd:bg-white-f8">
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                              Kunai
+                           </span>
+                        </td>
+                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                           kocain
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           500,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5bc0de]">
+                              ĐAO
+                           </span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                              Đã trao
+                           </span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           988,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           22:25:54
+                        </td>
+                     </tr>
+                     <tr class="border-gray-80 border-b odd:bg-white-f8">
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                              Kunai
+                           </span>
+                        </td>
+                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                           kocain
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           500,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                              TIÊU
+                           </span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px]">Thành công</span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           988,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           22:25:54
+                        </td>
+                     </tr>
+                     <tr class="border-gray-80 border-b odd:bg-white-f8">
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                              Kunai
+                           </span>
+                        </td>
+                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                           kocain
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           500,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#67617d]">
+                              QUẠT
+                           </span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm">
+                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                              Đã trao
+                           </span>
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           1,500,000,000
+                        </td>
+                        <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
+                           22:25:54
+                        </td>
+                     </tr>
+                  </tbody>
                </table>
             </div>
             <div class="mt-2 flex flex-col items-center justify-end gap-4 md:flex-row">
@@ -653,12 +739,26 @@
                   <div class="rounded-bl-[3px] rounded-br-[3px] p-3">
                      <table class="w-full table-auto text-left">
                         <tbody>
-                           <!-- <tr>
-                              <td class="flex gap-3 text-center text-sm"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">1</span>
-                                 <span>Cayvcl</span></td>
-                              <td class="text-center text-sm"><span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">Kunai</span></td>
-                              <td class="text-end text-sm"><span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">4,690,107,200</span></td>
-                           </tr> -->
+                           <tr>
+                              <td class="flex gap-3 text-center text-sm">
+                                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
+                                    1
+                                 </span>
+                                 <span>
+                                    kocain
+                                 </span>
+                              </td>
+                              <td class="text-center text-sm">
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
+                                    Kunai
+                                 </span>
+                              </td>
+                              <td class="text-end text-sm">
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
+                                    1,500,000,000
+                                 </span>
+                              </td>
+                           </tr>
                         </tbody>
                      </table>
                   </div>
@@ -684,12 +784,26 @@
                   <div class="rouned-br-[3px] rounded-bl-[3px] p-3">
                      <table class="w-full table-auto text-left">
                         <tbody>
-                           <!-- <tr>
-                              <td class="flex gap-3 text-center text-sm"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">1</span>
-                                 <span>kocain</span></td>
-                              <td class="text-center text-sm"><span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">Kunai</span></td>
-                              <td class="text-end text-sm"><span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">160,143,994,208</span></td>
-                           </tr> -->
+                           <tr>
+                              <td class="flex gap-3 text-center text-sm">
+                                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
+                                    1
+                                 </span>
+                                 <span>
+                                    kocain
+                                 </span>
+                              </td>
+                              <td class="text-center text-sm">
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
+                                    Kunai
+                                 </span>
+                              </td>
+                              <td class="text-end text-sm">
+                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
+                                    1,500,000,000
+                                 </span>
+                              </td>
+                           </tr>
                         </tbody>
                      </table>
                   </div>
