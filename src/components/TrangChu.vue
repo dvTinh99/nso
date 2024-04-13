@@ -389,7 +389,7 @@
                <tbody>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme2
+                        dctksite2
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Ookaza 11
@@ -401,7 +401,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme3
+                        dctksite3
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Ookaza 12
@@ -413,7 +413,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme4
+                        dctksite4
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Ookaza 13
@@ -425,7 +425,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme5
+                        dctksite5
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 15
@@ -437,7 +437,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme6
+                        dctksite6
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 16
@@ -449,7 +449,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme7
+                        dctksite7
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 17
@@ -461,7 +461,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme8
+                        dctksite8
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 18
@@ -473,7 +473,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme11
+                        dctksite11
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 22
@@ -485,7 +485,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme13
+                        dctksite13
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Đồi Fumimen 23
@@ -497,7 +497,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme14
+                        dctksite14
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Hirosaki 13
@@ -509,7 +509,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme15
+                        dctksite15
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Hirosaki 14
@@ -521,7 +521,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme16
+                        dctksite16
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Hirosaki 15
@@ -533,7 +533,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme17
+                        dctksite17
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Hirosaki 16
@@ -545,7 +545,7 @@
                   </tr>
                   <tr class="odd:bg-white-f8">
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
-                        dctkme12
+                        dctksite12
                      </td>
                      <td class="border-r border-gray-100 py-1 text-center text-sm">
                         Trường Hirosaki 17
