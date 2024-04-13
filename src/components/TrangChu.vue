@@ -7,7 +7,7 @@
             <div class="flex gap-4">
                <button @click="sendMessage"
                   class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5bc0de] text-white hover:bg-[#39b3d7]">
-                  <span class="flex-1 truncate">Xem hướng dẫn</span>
+                  <span class="flex-1 truncate" @click="() => {showHuongDan = !showHuongDan}">Xem hướng dẫn</span>
                </button>
                <a target="_blank" rel="noreferrer" href="https://zalo.me/g/xhypsj216">
                   <button
@@ -698,18 +698,22 @@
          </div>
       </div>
    </Master>
+   <HuongDan v-if="showHuongDan" @close-huong-dan="closeHuongDan()"/>
 </template>
 <script>
 var ws = new WebSocket(import.meta.env.VITE_WEBSOCKET_HOST);
 import Master from "./Master.vue";
+import HuongDan from "./HuongDan.vue";
 export default {
    components: {
       Master,
+      HuongDan
    },
    data() {
       return {
          random: "",
          second: "",
+         showHuongDan : false,
          xuThisGame: 0,
          xuPreviousGame :0,
          showRandom: false,
@@ -815,6 +819,9 @@ export default {
       // this.second = 99;
    },
    methods: {
+      closeHuongDan() {
+         this.showHuongDan = false;
+      },
       numberWithCommas(x) {
          return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
       },
