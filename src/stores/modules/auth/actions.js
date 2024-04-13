@@ -15,6 +15,8 @@ export default {
     async login({ commit, state }, data) {
         await Repository.post('/auth/login', data)
         .then(resp => {
+            console.log('resp',resp);
+            
             const { user } = resp.data;
             console.log('user', user);
             commit("setAccessToken", resp.data.accessToken)
