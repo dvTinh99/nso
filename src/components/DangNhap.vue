@@ -80,12 +80,7 @@ export default {
             password: this.password,
         };
         await this.$store.dispatch("auth/login", params);
-        console.log('this', this.isAdmin);
-        
-        if (!this.isAdmin) {
-          this.$router.push({ path: '/' });
-        }
-        this.$router.push({ path: '/cong-xu' });
+        this.$router.push({ path: '/' });
 
     },
   }

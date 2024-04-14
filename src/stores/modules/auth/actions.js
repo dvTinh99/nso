@@ -33,15 +33,16 @@ export default {
             }
         })
         .then(resp => {
-            return resp.data.user
+            let user = resp.data.user;
+            if (user.is_admin) {
+                commit("setIsAdmin", true)
+                commit("setIsLogin", true)
+            }
+            commit("setInfo", user)
         })
         .catch(error => {
             commit("setError", error)
         })
-        if (user.is_admin) {
-            commit("setIsAdmin", true)
-        }
-        commit("setInfo", user)
     },
     async setIsLogin({ commit, state }, data) {
         commit("setIsLogin", data)
