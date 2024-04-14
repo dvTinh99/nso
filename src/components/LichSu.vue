@@ -141,9 +141,13 @@
                         class="border h-8 w-8 flex items-center justify-center text-sm select-none hover:bg-gray-200 cursor-pointer cursor-not-allowed"
                         tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">&lt;</a>
                 </li>
-                <li class="bg-orange-400 border-0 text-white"><a rel="canonical" role="button"
+                <li :class="{'bg-orange-400 border-0 text-white' : n == currentPage}" v-for="n in totalPage">
+                    <a rel="canonical" role="button" @click="changePage(n)"
                         class="border h-8 w-8 flex items-center justify-center text-sm select-none hover:bg-gray-200 cursor-pointer"
-                        tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a></li>
+                        tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">
+                        {{ n }}
+                    </a>
+                </li>
                 <li class="next">
                         <a
                         class="border h-8 w-8 flex items-center justify-center text-sm select-none hover:bg-gray-200 cursor-pointer"
@@ -167,6 +171,8 @@ export default {
     data() {
         return {
             histories : [],
+            totalPage : 1,
+            currentPage : 1,
             arrayColorSC: [
                 "bg-[#f0ad4e]",
                 "bg-[#5bc0de]", // 1 chua biet
@@ -201,15 +207,24 @@ export default {
         }
     },
     async mounted() {
-        const data = await axios.get(API_URL + '/history/all').then(rs => {
-            return rs.data.histories;
+        const data = await axios.get(API_URL + `/history/all?perPage=15&page=1`).then(rs => {
+            return rs.data;
         });
-        this.histories = data;
-        console.log('data', data);
-        
-        console.log('lich su ne', this.$route.fullPath);
+        this.histories = data.histories;
+        this.totalPage = Math.ceil(data.total / 15);
     },
     methods: {
+        async fetchPage(page = 1) {
+            this.currentPage = page;
+            const data = await axios.get(API_URL + `/history/all?perPage=15&page=${page}`).then(rs => {
+                return rs.data;
+            });
+            this.histories = data.histories;
+            this.totalPage = Math.ceil(data.total / 15);
+        },
+        changePage(n) {
+            this.fetchPage(n)
+        },
         numberWithCommas(x) {
          return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         },
