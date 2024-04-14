@@ -90,7 +90,7 @@
                                     <p><br></p>
                                     <h1><strong class="ql-font-Mulish" style="color: rgb(230, 0, 0);"><u>Chat với bot
                                                 lệnh:</u></strong><strong class="ql-font-Mulish"
-                                            style="color: rgb(0, 138, 0);"> nap 1414</strong><strong
+                                            style="color: rgb(0, 138, 0);"> nap {{ info.id }}</strong><strong
                                             class="ql-font-Mulish" style="color: rgb(102, 185, 102);"> </strong></h1>
                                     <p><br></p>
                                     <h2><strong class="ql-font-Mulish"><em>Rồi giao dịch xu với Bot để tạo đơn nạp xu
@@ -149,10 +149,14 @@
 
 <script>
 import Master from "../Master.vue";
+import { mapState } from "vuex";
 export default {
     components: {
         Master
     },
+    computed: mapState({
+      info : state => state.auth.info
+   }),
     data() {
         return {
 

@@ -83,32 +83,32 @@
                         <tbody>
                             <tr>
                                 <td class="border p-2">ID:</td>
-                                <td class="border p-2">#1414</td>
+                                <td class="border p-2">{{ info.id }}</td>
                             </tr>
                             <tr>
                                 <td class="border p-2">Tài khoản:</td>
-                                <td class="border p-2">poketh3</td>
+                                <td class="border p-2">{{ info.username }}</td>
                             </tr>
                             <tr>
-                                <td class="border p-2">Họ tên:</td>
-                                <td class="border p-2">poketh3</td>
+                                <td class="border p-2">Biệt danh:</td>
+                                <td class="border p-2">{{ info.nickname }}</td>
                             </tr>
                             <tr>
                                 <td class="border p-2">Mã bảo mật:</td>
-                                <td class="border p-2">123456</td>
+                                <td class="border p-2">{{ info.secret_code }}</td>
                             </tr>
                             <tr>
                                 <td class="border p-2">Còn lại:</td>
                                 <td class="border p-2">0</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td class="border p-2">Loại tài khoản:</td>
                                 <td class="border p-2">Quản trị viên</td>
                             </tr>
                             <tr>
                                 <td class="border p-2">Ngày tạo tài khoản</td>
                                 <td class="border p-2">28-03-2024 11:10:39</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -119,10 +119,14 @@
 
 <script>
 import Master from "../Master.vue";
+import { mapState } from "vuex";
 export default {
     components: {
         Master
     },
+    computed: mapState({
+      info : state => state.auth.info
+    }),
     data() {
         return {
 
