@@ -884,15 +884,15 @@ export default {
          firstTimeCal: true,
          arrayColorSC: [
             "bg-[#f0ad4e]",
-            "bg-[#d9534f]", // 1 chua biet
+            "bg-[#5bc0de]", // 1 chua biet
             "bg-[#5cb85c]",
-            "bg-[#d9534f]", //
-            "bg-[#3705fc]",
+            "bg-[#d9534f]", //3
+            "bg-[#3705fc]", // 4
             "bg-[#67617d]", // 5
-            "bg-[#d9534f]", //
-            "bg-[#00b093]",
-            "bg-[#7400bd]",
-            "bg-[#d9534f]", //
+            "bg-[#cf02a9]", //6
+            "bg-[#00b093]", //7
+            "bg-[#7400bd]", //8
+            "bg-[#b8a500]", // 9
          ],
          arrayResult: [
             ["CUNG", "KIẾM", "KUNAI"], //0
