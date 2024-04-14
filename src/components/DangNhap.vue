@@ -76,6 +76,7 @@ export default {
             password: this.password,
         };
         await this.$store.dispatch("auth/login", params);
+        this.$router.push({ path: '/' });
     },
   }
 };

@@ -11,6 +11,12 @@ export default {
             refreshToken: '',
             isAdmin: false,
             error: '',
+            info: {
+                email: null,
+                is_admin: 0,
+                username: null,
+                nickname: null,
+            }
          };
     },
     mutations,

@@ -9,21 +9,36 @@ export default {
         
         })
         .catch(error => {
-            commit("setError", errMsg)
+            commit("setError", error)
         })
     },
     async login({ commit, state }, data) {
-        await Repository.post('/auth/login', data)
+        const user = await Repository.post('/auth/login', data)
         .then(resp => {
-            console.log('resp',resp);
-            
-            const { user } = resp.data;
-            console.log('user', user);
-            commit("setAccessToken", resp.data.accessToken)
+            return resp.data
         })
         .catch(error => {
-            commit("setError", errMsg)
+            commit("setError", error)
         })
+
+        window.localStorage.setItem('token', user.accessToken);
+        commit("setIsLogin", true)
+        commit("setAccessToken", user.accessToken)
+    },
+    async info({ commit, state }, data) {
+        const TOKEN = window.localStorage.getItem('token');
+        const user = await Repository.get('/auth/info', {
+            headers: {
+                'Authorization': `Basic ${TOKEN}` 
+            }
+        })
+        .then(resp => {
+            return resp.data.user
+        })
+        .catch(error => {
+            commit("setError", error)
+        })
+        commit("setInfo", user)
     },
 }
 
