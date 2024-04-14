@@ -86,7 +86,7 @@
                             <div class="ql-container ql-snow" style="border: none;">
                                 <div class="ql-editor">
                                     <h2><strong class="ql-font-Mulish" style="color: rgb(230, 0, 0);">HƯỚNG DẪN NẠP XU
-                                            CHO TÀI KHOẢN <u>poketh3</u></strong></h2>
+                                            CHO TÀI KHOẢN <u>{{ info.username }}</u></strong></h2>
                                     <p><br></p>
                                     <h1><strong class="ql-font-Mulish" style="color: rgb(230, 0, 0);"><u>Chat với bot
                                                 lệnh:</u></strong><strong class="ql-font-Mulish"
