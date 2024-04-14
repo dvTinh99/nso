@@ -40,5 +40,8 @@ export default {
         })
         commit("setInfo", user)
     },
+    async setIsLogin({ commit, state }, data) {
+        commit("setIsLogin", data)
+    },
 }
 

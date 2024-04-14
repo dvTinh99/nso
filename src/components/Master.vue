@@ -237,13 +237,15 @@ export default {
       };
    },
    computed: mapState({
-      info : state => state.auth.info
+      info : state => state.auth.info,
+      isLogin : state => state.auth.isLogin
    }),
    async mounted() {
       const token = window.localStorage.getItem("token");
       if (token) {
          this.isLogged = true;
          this.token = token;
+         await this.$store.dispatch("auth/setIsLogin", true);
       }
 
       await this.$store.dispatch("auth/info");
@@ -283,9 +285,10 @@ export default {
       changePage(path) {
          this.$router.push({ path: path });
       },
-      signOut() {
+      async signOut() {
          window.localStorage.setItem('token', '');
          this.isLogged = false;
+         await this.$store.dispatch("auth/setIsLogin", false);
       }
    },
 };

@@ -7,7 +7,7 @@
             <div class="flex gap-4">
                <button @click="sendMessage"
                   class="flex items-center gap-2 rounded-[.25em] py-1.5 px-4 outline-none transition-colors bg-[#5bc0de] text-white hover:bg-[#39b3d7]">
-                  <span class="flex-1 truncate" @click="() => {showHuongDan = !showHuongDan}">Xem hướng dẫn</span>
+                  <span class="flex-1 truncate" @click="() => { showHuongDan = !showHuongDan }">Xem hướng dẫn</span>
                </button>
                <a target="_blank" rel="noreferrer" href="https://zalo.me/g/xhypsj216">
                   <button
@@ -215,9 +215,29 @@
                         <p>THAM GIA</p>
                         <p>3,500,000</p>
                      </div>
+
+                     <div class="col-span-1 text-center"><span>Còn: 0</span>
+                        <div class="flex justify-center gap-1"><button
+                              class="rounded-sm bg-[#ed9c28] px-1 py-[1px] text-[13px] hover:opacity-90"><svg
+                                 stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 288 512"
+                                 class="inline" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M209.2 233.4l-108-31.6C88.7 198.2 80 186.5 80 173.5c0-16.3 13.2-29.5 29.5-29.5h66.3c12.2 0 24.2 3.7 34.2 10.5 6.1 4.1 14.3 3.1 19.5-2l34.8-34c7.1-6.9 6.1-18.4-1.8-24.5C238 74.8 207.4 64.1 176 64V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h-2.5C45.8 64-5.4 118.7.5 183.6c4.2 46.1 39.4 83.6 83.8 96.6l102.5 30c12.5 3.7 21.2 15.3 21.2 28.3 0 16.3-13.2 29.5-29.5 29.5h-66.3C100 368 88 364.3 78 357.5c-6.1-4.1-14.3-3.1-19.5 2l-34.8 34c-7.1 6.9-6.1 18.4 1.8 24.5 24.5 19.2 55.1 29.9 86.5 30v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48.2c46.6-.9 90.3-28.6 105.7-72.7 21.5-61.6-14.6-124.8-72.5-141.7z">
+                                 </path>
+                              </svg> Chi tiết</button><a
+                              class="rounded-sm bg-[#5cb85c] px-1 py-[1px] text-[13px] hover:opacity-90"
+                              href="/nap-xu"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                 viewBox="0 0 288 512" class="inline" height="1em" width="1em"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M209.2 233.4l-108-31.6C88.7 198.2 80 186.5 80 173.5c0-16.3 13.2-29.5 29.5-29.5h66.3c12.2 0 24.2 3.7 34.2 10.5 6.1 4.1 14.3 3.1 19.5-2l34.8-34c7.1-6.9 6.1-18.4-1.8-24.5C238 74.8 207.4 64.1 176 64V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h-2.5C45.8 64-5.4 118.7.5 183.6c4.2 46.1 39.4 83.6 83.8 96.6l102.5 30c12.5 3.7 21.2 15.3 21.2 28.3 0 16.3-13.2 29.5-29.5 29.5h-66.3C100 368 88 364.3 78 357.5c-6.1-4.1-14.3-3.1-19.5 2l-34.8 34c-7.1 6.9-6.1 18.4 1.8 24.5 24.5 19.2 55.1 29.9 86.5 30v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48.2c46.6-.9 90.3-28.6 105.7-72.7 21.5-61.6-14.6-124.8-72.5-141.7z">
+                                 </path>
+                              </svg> Bơm</a></div>
+                     </div>
                   </div>
                   <div class="p-4">
-                     <div class="flex flex-col items-center rounded border border-[#ebccd1] bg-[#f2dede] p-2">
+                     <div class="flex flex-col items-center rounded border border-[#ebccd1] bg-[#f2dede] p-2"
+                        v-if="!isLogin">
                         <p class="pb-1 text-sm text-[#a94442]">
                            Hãy đăng nhập để tham gia nhé
                         </p>
@@ -340,23 +360,27 @@
                   <tbody>
                      <tr class="border-gray-80 border-b odd:bg-white-f8">
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
                               Kunai
                            </span>
                         </td>
-                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                        <td
+                           class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
                            kocain
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
                            500,000,000
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5bc0de]">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5bc0de]">
                               ĐAO
                            </span>
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
                               Đã trao
                            </span>
                         </td>
@@ -369,23 +393,28 @@
                      </tr>
                      <tr class="border-gray-80 border-b odd:bg-white-f8">
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
                               Kunai
                            </span>
                         </td>
-                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                        <td
+                           class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
                            kocain
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
                            500,000,000
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
                               TIÊU
                            </span>
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px]">Thành công</span>
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px]">Thành
+                              công</span>
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
                            988,000,000
@@ -396,23 +425,27 @@
                      </tr>
                      <tr class="border-gray-80 border-b odd:bg-white-f8">
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white rounded-[.25em] bg-[#f0ad4e] text-[10.5px] uppercase">
                               Kunai
                            </span>
                         </td>
-                        <td class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
+                        <td
+                           class="border-gray-80 whitespace-nowrap border-r p-[8px] text-center text-sm text-[#333333]">
                            kocain
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm text-[#333333]">
                            500,000,000
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-[10.5px]">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#67617d]">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#67617d]">
                               QUẠT
                            </span>
                         </td>
                         <td class="border-gray-80 border-r p-[8px] text-center text-sm">
-                           <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
+                           <span
+                              class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#5cb85c]">
                               Đã trao
                            </span>
                         </td>
@@ -741,7 +774,8 @@
                         <tbody>
                            <tr>
                               <td class="flex gap-3 text-center text-sm">
-                                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
+                                 <span
+                                    class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
                                     1
                                  </span>
                                  <span>
@@ -749,12 +783,14 @@
                                  </span>
                               </td>
                               <td class="text-center text-sm">
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
+                                 <span
+                                    class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
                                     Kunai
                                  </span>
                               </td>
                               <td class="text-end text-sm">
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
+                                 <span
+                                    class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
                                     1,500,000,000
                                  </span>
                               </td>
@@ -786,7 +822,8 @@
                         <tbody>
                            <tr>
                               <td class="flex gap-3 text-center text-sm">
-                                 <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
+                                 <span
+                                    class="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-1 text-[11px] font-bold text-white">
                                     1
                                  </span>
                                  <span>
@@ -794,12 +831,14 @@
                                  </span>
                               </td>
                               <td class="text-center text-sm">
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
+                                 <span
+                                    class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#f0ad4e] text-[11px] uppercase">
                                     Kunai
                                  </span>
                               </td>
                               <td class="text-end text-sm">
-                                 <span class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
+                                 <span
+                                    class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-[#d9534f] text-[11px]">
                                     1,500,000,000
                                  </span>
                               </td>
@@ -812,24 +851,29 @@
          </div>
       </div>
    </Master>
-   <HuongDan v-if="showHuongDan" @close-huong-dan="closeHuongDan()"/>
+   <HuongDan v-if="showHuongDan" @close-huong-dan="closeHuongDan()" />
 </template>
 <script>
 var ws = new WebSocket(import.meta.env.VITE_WEBSOCKET_HOST);
 import Master from "./Master.vue";
+import { mapState } from "vuex";
 import HuongDan from "./HuongDan.vue";
 export default {
    components: {
       Master,
       HuongDan
    },
+   computed: mapState({
+      isLogin: state => state.auth.isLogin
+   }),
    data() {
       return {
          random: "",
+         token: "",
          second: "",
-         showHuongDan : false,
+         showHuongDan: false,
          xuThisGame: 0,
-         xuPreviousGame :0,
+         xuPreviousGame: 0,
          showRandom: false,
          splitRandom: "",
          sumSplitRandom: 0,
@@ -866,7 +910,6 @@ export default {
          UQResult: ["U", "", "U", "", "U", "Q", "", "Q", "", "Q"],
       };
    },
-
    created() {
       ws.onopen = function (e) {
          console.log("Connection to server opened");
@@ -926,9 +969,7 @@ export default {
       };
    },
    mounted() {
-      console.log('trang chu ne',this.$route.fullPath);
 
-      
       // let
       // this.second = 99;
    },
