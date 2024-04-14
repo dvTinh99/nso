@@ -38,6 +38,9 @@ export default {
         .catch(error => {
             commit("setError", error)
         })
+        if (user.is_admin) {
+            commit("setIsAdmin", true)
+        }
         commit("setInfo", user)
     },
     async setIsLogin({ commit, state }, data) {

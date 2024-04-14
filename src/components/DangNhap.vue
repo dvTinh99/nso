@@ -59,10 +59,14 @@
 
 <script>
 import Master from "./Master.vue";
+import { mapState } from "vuex";
 export default {
   components: {
     Master,
   },
+  computed : mapState({
+    isAdmin : state => state.auth.isAdmin,
+  }),
   data() {
     return {
         username : "",
@@ -76,7 +80,13 @@ export default {
             password: this.password,
         };
         await this.$store.dispatch("auth/login", params);
-        this.$router.push({ path: '/' });
+        console.log('this', this.isAdmin);
+        
+        if (!this.isAdmin) {
+          this.$router.push({ path: '/' });
+        }
+        this.$router.push({ path: '/cong-xu' });
+
     },
   }
 };

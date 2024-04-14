@@ -9,6 +9,7 @@ import NapXu from '../components/logged/NapXu.vue';
 import RutXu from '../components/logged/RutXu.vue';
 import BienDongSoDu from '../components/logged/BienDongSoDu.vue';
 import DoiMatKhau from '../components/logged/DoiMatKhau.vue';
+import CongXu from '../components/admin/CongXu.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -56,6 +57,11 @@ const router = createRouter({
       path: "/doi-mat-khau", 
       name: 'doi-mat-khau',
       component: DoiMatKhau 
+    },
+    { 
+      path: "/cong-xu", 
+      name: 'cong-xu',
+      component: CongXu 
     },
   ]
 })
