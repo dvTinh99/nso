@@ -114,7 +114,7 @@
             <ul class="flex gap-3">
                <li>
                   <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white"
-                     :class="[isHome ? classSelected : classNotSelected]" @click="changePage('/')">
+                     :class="[currentUrl == '/' ? classSelected : classNotSelected]" @click="changePage('/')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
                         class="text-[28px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -125,8 +125,7 @@
                   </a>
                </li>
                <li v-if="isLogged">
-                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white border-orange-cc bg-orange-d5"
-                     href="/thong-tin-ca-nhan" :class="[isInfo ? classSelected : classNotSelected]" @click="changePage('/thong-tin-ca-nhan')">
+                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white " :class="[currentUrl == '/thong-tin-ca-nhan' ? classSelected : classNotSelected]" @click="changePage('/thong-tin-ca-nhan')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
                         class="text-[28px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -137,8 +136,8 @@
                   </a>
                </li>
                <li v-if="isLogged">
-                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white border-orange-cc bg-orange-d5"
-                     href="/nap-xu" :class="[isNapXu ? classSelected : classNotSelected]" @click="changePage('/nap-xu')">
+                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white "
+                     href="/nap-xu" :class="[currentUrl == '/nap-xu' ? classSelected : classNotSelected]" @click="changePage('/nap-xu')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 288 512" class="text-[28px]" height="1em" width="1em"
                         xmlns="http://www.w3.org/2000/svg">
@@ -148,8 +147,8 @@
                      </svg><span class="mt-1 text-sm">Bơm</span></a>
                </li>
                <li v-if="isLogged">
-                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white border-orange-cc bg-orange-d5"
-                     href="/rut-xu" :class="[isRutXu ? classSelected : classNotSelected]" @click="changePage('/rut-xu')">
+                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white "
+                     href="/rut-xu" :class="[currentUrl == '/rut-xu' ? classSelected : classNotSelected]" @click="changePage('/rut-xu')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 1024 1024" class="text-[28px]" height="1em" width="1em"
                         xmlns="http://www.w3.org/2000/svg">
@@ -159,8 +158,8 @@
                      </svg><span class="mt-1 text-sm">Rút</span></a>
                </li>
                <li v-if="isLogged">
-                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white border-orange-cc bg-orange-d5"
-                     href="/bien-dong-so-du" :class="[isBienDong ? classSelected : classNotSelected]" @click="changePage('/bien-dong-so-du')">
+                  <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white "
+                     href="/bien-dong-so-du" :class="[currentUrl == '/bien-dong-so-du' ? classSelected : classNotSelected]" @click="changePage('/bien-dong-so-du')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 512 512" class="text-[28px]" height="1em" width="1em"
                         xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +171,7 @@
                <li v-if="!isLogged">
                   <a aria-current="page"
                      class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white"
-                     :class="[isLogin ? classSelected : classNotSelected]" @click="changePage('/dang-nhap')">
+                     :class="[currentUrl == '/dang-nhap' ? classSelected : classNotSelected]" @click="changePage('/dang-nhap')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
                         class="text-[28px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -184,7 +183,7 @@
                </li>
                <li v-if="!isLogged">
                   <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white"
-                     :class="[isRegister ? classSelected : classNotSelected]" @click="changePage('/dang-ki')">
+                     :class="[currentUrl == '/dang-ki' ? classSelected : classNotSelected]" @click="changePage('/dang-ki')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512"
                         class="text-[28px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -196,7 +195,7 @@
                </li>
                <li>
                   <a class="relative flex h-20 cursor-pointer flex-col items-center justify-center rounded border-2 px-5 py-[14px] text-white"
-                     :class="[isHistory ? classSelected : classNotSelected]" @click="changePage('/lich-su')">
+                     :class="[currentUrl == '/lich-su' ? classSelected : classNotSelected]" @click="changePage('/lich-su')">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
                         class="text-[28px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -230,6 +229,7 @@ import { mapState } from "vuex";
 export default {
    data() {
       return {
+         currentUrl : this.$route.path,
          isHome: true,
          isLogin: false,
          isLogged: false,
@@ -255,38 +255,6 @@ export default {
          await this.$store.dispatch("auth/setIsLogin", true);
       }
 
-      // await this.$store.dispatch("auth/info");
-      switch (this.$route.path) {
-         case "/dang-nhap": {
-            this.isLogin = true;
-            this.isHome = false;
-            this.isRegister = false;
-            this.isHistory = false;
-            if (this.isLogged) this.changePage("/");
-            break;
-         }
-         case "/dang-ki": {
-            this.isLogin = false;
-            this.isHome = false;
-            this.isRegister = true;
-            this.isHistory = false;
-            break;
-         }
-         case "/lich-su": {
-            this.isLogin = false;
-            this.isHome = false;
-            this.isRegister = false;
-            this.isHistory = true;
-            break;
-         }
-         default: {
-            this.isLogin = false;
-            this.isHome = true;
-            this.isRegister = false;
-            this.isHistory = false;
-            break;
-         }
-      }
    },
    methods: {
       changePage(path) {
