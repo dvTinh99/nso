@@ -213,7 +213,7 @@
                   <div class="grid grid-cols-2 bg-brown-ad py-2 text-sm text-white">
                      <div class="col-span-1 text-center">
                         <p>THAM GIA</p>
-                        <p>3,500,000</p>
+                        <p>{{ xuJoin }}</p>
                      </div>
 
                      <div class="col-span-1 text-center" v-if="isLogin"><span>Còn: 0</span>
@@ -871,6 +871,7 @@ export default {
          random: "",
          token: "",
          second: "",
+         xuJoin : 0,
          showHuongDan: false,
          xuThisGame: 0,
          xuPreviousGame: 0,
