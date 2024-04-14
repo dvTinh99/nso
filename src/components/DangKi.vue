@@ -86,6 +86,7 @@ export default {
                 password: this.password,
             };
             await this.$store.dispatch("auth/register", params);
+            this.$router.push({ path: '/dang-nhap' });
         }
     },
     watch: {
