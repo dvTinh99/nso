@@ -216,7 +216,7 @@
                         <p>{{ xuJoin }}</p>
                      </div>
 
-                     <div class="col-span-1 text-center" v-if="isLogin"><span>Còn: 0</span>
+                     <div class="col-span-1 text-center" v-if="isLogin"><span>Còn: {{ info.xu }}</span>
                         <div class="flex justify-center gap-1"><button
                               class="rounded-sm bg-[#ed9c28] px-1 py-[1px] text-[13px] hover:opacity-90"><svg
                                  stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 288 512"
@@ -864,7 +864,8 @@ export default {
       HuongDan
    },
    computed: mapState({
-      isLogin: state => state.auth.isLogin
+      isLogin: state => state.auth.isLogin,
+      info: state => state.auth.info
    }),
    data() {
       return {
