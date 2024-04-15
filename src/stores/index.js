@@ -9,7 +9,9 @@ export default createStore({
   },
   getters: {
     isLogin (state) {
-      return state.auth.isLogin
+      let token = window.localStorage.getItem('token');
+      if (!token) return false;
+      return token != '';
     },
     isAdmin (state) {
       return state.auth.isAdmin
