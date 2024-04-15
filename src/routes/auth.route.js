@@ -10,6 +10,7 @@ import RutXu from '../components/logged/RutXu.vue';
 import BienDongSoDu from '../components/logged/BienDongSoDu.vue';
 import DoiMatKhau from '../components/logged/DoiMatKhau.vue';
 import CongXu from '../components/admin/CongXu.vue';
+import ListUser from '../components/admin/ListUser.vue';
 
 import store from '../stores'
 const router = createRouter({
@@ -69,6 +70,12 @@ const router = createRouter({
       path: "/cong-xu", 
       name: 'cong-xu',
       component: CongXu ,
+      meta: { requiresAuth: true, requiresAdmin: true },
+    },
+    { 
+      path: "/danh-sach-user", 
+      name: 'danh-sach-user',
+      component: ListUser ,
       meta: { requiresAuth: true, requiresAdmin: true },
     },
   ]
