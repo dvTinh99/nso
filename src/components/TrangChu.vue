@@ -235,7 +235,7 @@
                               </svg> Bơm</a></div>
                      </div>
                   </div>
-                  <div class="p-4">
+                  <div class="p-4" @v-if="!isLogin">
                      <div class="flex flex-col items-center rounded border border-[#ebccd1] bg-[#f2dede] p-2"
                         v-if="!isLogin">
                         <p class="pb-1 text-sm text-[#a94442]">

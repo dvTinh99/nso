@@ -271,6 +271,7 @@ export default {
          }
          this.isLogged = true;
          this.token = token;
+         await this.$store.dispatch("auth/setIsLogin", true);
       }
 
    },
