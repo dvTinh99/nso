@@ -82,7 +82,7 @@
                 </thead>
                 <tbody>
                     <tr class="odd:bg-white-f8" v-for="history in histories" >
-                        <td class="border border-gray-200 py-1 px-4 text-center text-sm">#{{ history.id }}</td>
+                        <td class="border border-gray-200 py-1 px-4 text-center text-sm">#{{ history.spin_code }}</td>
                         <td class="border border-gray-200 py-1 px-4 text-center text-sm">
                             <span
                                 class="whitespace-nowrap rounded-[.25em] py-0.5 px-2.5 text-[10.5px] font-semibold text-white bg-orange-400 uppercase">
@@ -226,6 +226,7 @@ export default {
             this.fetchPage(n)
         },
         numberWithCommas(x) {
+            if (!x) return null;
          return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         },
         moment: function (date, isEnd) {

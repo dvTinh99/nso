@@ -38,7 +38,7 @@
                               <strong class="text-[#333333]">Mã VXMM: </strong>
                            </div>
                            <div class="col-span-2 text-center">
-                              <span class="text-[#333333]">#39599</span>
+                              <span class="text-[#333333]">#{{spinCode}}</span>
                            </div>
                         </div>
                         <div class="grid grid-cols-3 border-b border-gray-cc py-1">
@@ -890,6 +890,7 @@ export default {
          xuJoin : 0,
          showHuongDan: false,
          xuThisGame: 0,
+         spinCode: 0,
          xuPreviousGame: 0,
          showRandom: false,
          splitRandom: "",
@@ -938,7 +939,7 @@ export default {
          var data = JSON.parse(e.data);
 
          if (this.firstTimeCal) {
-            [this.second, this.random, this.historyLastNumber, this.xuThisGame, this.xuPreviousGame] = data;
+            [this.spinCode, this.second, this.random, this.historyLastNumber, this.xuThisGame, this.xuPreviousGame] = data;
             this.sumSplitRandom = 0;
             this.splitRandom = "";
 
@@ -954,7 +955,7 @@ export default {
             this.resultSum = this.random; // cộng thêm % hoạc tào lao gì cũng ok
             this.firstTimeCal = false;
          } else {
-            [this.second, this.random, this.historyLastNumber] = data;
+            [this.spinCode, this.second, this.random, this.historyLastNumber] = data;
          }
 
          let minues = parseInt(this.second.split(":")[0]);
