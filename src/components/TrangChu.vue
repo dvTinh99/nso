@@ -259,37 +259,52 @@
                      <div class="relative mb-4">
                         <input type="text" placeholder="Tham gia"
                            class="h-8 w-full appearance-none rounded-md border border-gray-400 px-4 shadow outline-none disabled:cursor-not-allowed disabled:bg-gray-100"
-                           disabled="" value="" />
+                           :disabled="!canPlay" 
+                           v-model="xuBet" />
                      </div>
                      <div class="grid grid-cols-3 gap-8 text-sm">
                         <button
                            class="rounded-xl bg-[#f0ad4e] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
-                           Cung</button><button
+                           :disabled="!canPlay" @click="bet('C')">
+                           Cung
+                        </button>
+                        <button
                            class="rounded-xl bg-[#5cb85c] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
-                           Tiêu</button><button
+                           :disabled="!canPlay" @click="bet('T')">
+                           Tiêu
+                        </button>
+                        <button
                            class="rounded-xl bg-[#3705fc] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
-                           Kunai</button><button
+                           :disabled="!canPlay" @click="bet('U')">
+                           Kunai
+                        </button>
+                        <button
                            class="rounded-xl bg-[#5bc0de] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
-                           Đao</button><button
+                           :disabled="!canPlay" @click="bet('Đ')">
+                           Đao
+                        </button>
+                        <button
                            class="rounded-xl bg-[#d9534f] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
-                           Kiếm</button><button
+                           :disabled="!canPlay" @click="bet('K')">
+                           Kiếm
+                        </button>
+                        <button
                            class="rounded-xl bg-[#67617d] px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
+                           :disabled="!canPlay" @click="bet('Q')">
                            Quạt
                         </button>
                         <div class="col-span-2 flex items-center">
                            <input
                               class="h-8 w-full appearance-none rounded-md border border-gray-400 px-4 shadow outline-none disabled:cursor-not-allowed disabled:bg-gray-100"
-                              type="text" placeholder="Chọn số từ 0 đến 9" disabled="" min="0" max="9" value="" />
+                              type="text" placeholder="Chọn số từ 0 đến 9" 
+                              :disabled="!canPlay" 
+                              min="0" 
+                              max="9" 
+                              v-model="betSC" />
                         </div>
                         <button
                            class="rounded-xl bg-violet px-4 py-3 font-semibold uppercase text-white hover:opacity-70 disabled:cursor-not-allowed"
-                           disabled="">
+                           :disabled="!canPlay" @click="bet(betSC)">
                            Số cuối
                         </button>
                      </div>
@@ -883,6 +898,9 @@ export default {
          lastNumber: 0,
          historyLastNumber: [],
          firstTimeCal: true,
+         canPlay:true,
+         betSC : null,
+         xuBet : null,
          arrayColorSC: [
             "bg-[#f0ad4e]",
             "bg-[#5bc0de]", // 1 chua biet
@@ -992,6 +1010,19 @@ export default {
       disconnect() {
          ws.close();
       },
+      async bet(bet) {
+         console.log('bet', bet);
+         console.log('xu bet', this.xuBet);
+         if (this.xuBet && this.xuBet > 0) {
+
+            let params = {
+               "xu" : this.xuBet,
+               "bet" : bet
+            }
+            await this.$store.dispatch("game/create", params);
+            this.xuBet = null;
+         }
+      }
    },
 };
 </script>

@@ -2,10 +2,12 @@
 import { createStore } from 'vuex'
 // store modules
 import auth from './modules/auth/store';
+import game from './modules/game/store';
 
 export default createStore({
   modules: {
     auth,
+    game
   },
   getters: {
     isLogin (state) {

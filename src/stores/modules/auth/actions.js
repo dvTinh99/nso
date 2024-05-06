@@ -51,5 +51,8 @@ export default {
     async setIsLogin({ commit, state }, data) {
         commit("setIsLogin", data)
     },
+    async setInfo({ commit, state }, data) {
+        commit("setInfo", data)
+    },
 }
 
