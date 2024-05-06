@@ -252,19 +252,25 @@ export default {
          isInfo: false,
          classSelected: "border-brown-ad bg-brown-ad",
          classNotSelected: "border-orange-cc bg-orange-d5",
+         info: null,
       };
    },
    computed: mapState({
-      info : state => state.auth.info,
-      isLogin : state => state.auth.isLogin,
-      isAdmin : state => state.auth.isAdmin,
+      // info : state => state.auth.info,
+      // isLogin : state => state.auth.isLogin,
+      // isAdmin : state => state.auth.isAdmin,
    }),
    async mounted() {
       const token = window.localStorage.getItem("token");
       if (token) {
+         const xu = window.localStorage.getItem("xu");
+         const nickname = window.localStorage.getItem("nickname");
+         this.info = {
+            xu,
+            nickname
+         }
          this.isLogged = true;
          this.token = token;
-         await this.$store.dispatch("auth/setIsLogin", true);
       }
 
    },

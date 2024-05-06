@@ -22,6 +22,10 @@ export default {
         })
 
         window.localStorage.setItem('token', user.accessToken);
+        window.localStorage.setItem('nickname', user.user.nickname);
+        window.localStorage.setItem('id', user.user.id);
+        window.localStorage.setItem('username', user.user.username);
+        window.localStorage.setItem('xu', user.user.xu);
         commit("setIsLogin", true)
         commit("setAccessToken", user.accessToken)
     },

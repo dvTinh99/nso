@@ -81,22 +81,6 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach(async (to, from, next) => {
-  await store.dispatch("auth/info");
-  const isLogin = store.getters.isLogin;
-  const isAdmin = store.getters.isAdmin;
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (!isLogin) {
-      next('/dang-nhap');
-    }
-  }
-  if (to.matched.some((record) => record.meta.requiresAdmin)) {
-    if (!isAdmin) {
-      next('/');
-    }
-  }
-  next();
-});
 
 
 export default router
